@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
@@ -20,7 +22,10 @@ public class Main {
         byte do int = rzutowanie z którego nic nie tracę
         int do byte = rzutowanie zawężające
          */
-
+        Scanner klawiatura = new Scanner(System.in);
+        System.out.println("podaj liczbę z zakresu 1 do 100");
+        int wpisana = klawiatura.nextInt();
+        System.out.println("wstawiono: "+wpisana);
     }
 
 }
