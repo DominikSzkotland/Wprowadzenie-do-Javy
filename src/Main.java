@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main {
@@ -40,6 +41,16 @@ public class Main {
         }
         System.out.println("Wczytane liczby"+liczbyWczytane);
 
+        LinkedList<Integer> trafione = new LinkedList<>();
+        //jeżeli jakaś liczba będzie i w wylosowane i w wpisane to dać do trafione
+        for(Integer wylosowana:wylosowane)
+        {
+            if(liczbyWczytane.contains(wylosowana))
+            {
+                trafione.add(wylosowana);
+            }
+        }
+        System.out.println("Trafiono "+trafione);
     }
 }
 
