@@ -8,37 +8,32 @@ public class Main {
         System.out.println(liczbaWylosowana);
         Scanner klawiatura = new Scanner(System.in);
         System.out.println("podaj liczbę z zakresu 1 do 100");
-        for(int i = 0; i < 10; i++)
+        int wpisana = klawiatura.nextInt();
+        System.out.println("wstawiono: " + wpisana);
+        while(wpisana != liczbaWylosowana)
         {
-            int wpisana = klawiatura.nextInt();
-            System.out.println("wstawiono: " + wpisana);
-            if (liczbaWylosowana == wpisana)
+            int roznica = liczbaWylosowana > wpisana ? liczbaWylosowana - wpisana : wpisana - liczbaWylosowana;
+            roznica = roznica / 10;
+            if(wpisana > liczbaWylosowana)
             {
-                System.out.println("Brawo zgadłeś!");
-                break;
+                System.out.println("Za dużo!");
             }
-
             else
             {
-                int roznica = liczbaWylosowana > wpisana ? liczbaWylosowana - wpisana : wpisana - liczbaWylosowana;
-                roznica = roznica / 10;
-                if(wpisana > liczbaWylosowana)
-                {
-                    System.out.println("Za dużo!");
-                }
-                else
-                {
-                    System.out.println("Za mało!");
-                }
-                System.out.println(
-                        switch (roznica) {
-                            case 0 -> "było bardzo blisko";
-                            case 1 -> "Całkiem nieźle";
-                            case 2 -> "prawie";
-                            default -> "spróbuj ponownie";
-                        });
+                System.out.println("Za mało!");
             }
+            System.out.println(
+                    switch (roznica) {
+                        case 0 -> "było bardzo blisko";
+                        case 1 -> "Całkiem nieźle";
+                        case 2 -> "prawie";
+                        default -> "spróbuj ponownie";
+                    });
+
+            wpisana = klawiatura.nextInt();
+            System.out.println("wstawiono: " + wpisana);
         }
+        System.out.println("Brawo Zgadłeś!");
     }
 }
 
