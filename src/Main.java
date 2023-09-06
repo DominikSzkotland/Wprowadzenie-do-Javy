@@ -33,6 +33,12 @@ public class Main {
         }
         else
         {
+            int roznica = liczbaWylosowana > wpisana ? liczbaWylosowana - wpisana : wpisana - liczbaWylosowana;
+            /*
+                Wyrażęnie warunkowe
+                wzór:
+                warunek ? if true : if false
+            */
             System.out.println("Spróbuj innym razem");
         }
     }
