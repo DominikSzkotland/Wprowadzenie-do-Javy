@@ -51,6 +51,10 @@ public class Main {
             }
         }
         System.out.println("Trafiono "+trafione);
+
+        //różnica między typami prostymi i złożonymi
+        int liczba1 = 20; //typy proste nie mają metod.
+        Integer liczba2 = 30; //typy złożone zawsze pisane z dużej litery obiekty które mają własnośći i metody
     }
 }
 
