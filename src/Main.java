@@ -4,6 +4,14 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main {
+    private static HashSet<Integer> WylosujLiczby() {
+    System.out.println("Zostanie wylosowanych 6 liczb z zakresu od 1 do 100");
+    HashSet<Integer> wylosowane = new HashSet<>();
+    while (wylosowane.size() < 6) {
+        wylosowane.add((int) (Math.random() * 10 + 1));
+    }
+    return wylosowane;
+}
     public static void main(String[] args) {
         System.out.println("Zostanie wylosowanych 6 liczb z zakresu od 1 do 100");
         HashSet<Integer> wylosowane = new HashSet<>();
@@ -13,48 +21,45 @@ public class Main {
         zbiory - HashSet - elementy zazwyczaj nieporządkowane nieindeksowane nie mogą się potarzać
         mapy
          */
-        while(wylosowane.size()<6)
-        {
-            wylosowane.add((int)(Math.random()*10+1));
+        while (wylosowane.size() < 6) {
+            wylosowane.add((int) (Math.random() * 10 + 1));
         }
         System.out.println(wylosowane);//adres obiektu
-        for(int wylosowana:wylosowane)//taki foreach
+        for (int wylosowana : wylosowane)//taki foreach
         {
-            System.out.println(wylosowana+", ");
+            System.out.println(wylosowana + ", ");
         }
         //wczytywać z klawaitury 6 liczb bez powtórzeń
         Scanner klawiatura = new Scanner(System.in);
         ArrayList<Integer> liczbyWczytane = new ArrayList<>();
 
-        for(int i=0; i<6; i++)
-        {
+        for (int i = 0; i < 6; i++) {
             int liczba;
-            do
-            {
+            do {
                 System.out.println("podaj liczbę");
                 liczba = klawiatura.nextInt();
             }
-            while(liczbyWczytane.contains(liczba));
+            while (liczbyWczytane.contains(liczba));
             {
                 liczbyWczytane.add(liczba);
             }
         }
-        System.out.println("Wczytane liczby"+liczbyWczytane);
+        System.out.println("Wczytane liczby" + liczbyWczytane);
 
         LinkedList<Integer> trafione = new LinkedList<>();
         //jeżeli jakaś liczba będzie i w wylosowane i w wpisane to dać do trafione
-        for(Integer wylosowana:wylosowane)
-        {
-            if(liczbyWczytane.contains(wylosowana))
-            {
+        for (Integer wylosowana : wylosowane) {
+            if (liczbyWczytane.contains(wylosowana)) {
                 trafione.add(wylosowana);
             }
         }
-        System.out.println("Trafiono "+trafione);
+        System.out.println("Trafiono " + trafione);
 
         //różnica między typami prostymi i złożonymi
         int liczba1 = 20; //typy proste nie mają metod.
         Integer liczba2 = 30; //typy złożone zawsze pisane z dużej litery obiekty które mają własnośći i metody
     }
-}
 
+
+
+}
