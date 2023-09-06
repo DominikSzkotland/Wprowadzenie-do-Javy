@@ -39,7 +39,22 @@ public class Main {
                 wzór:
                 warunek ? if true : if false
             */
-            System.out.println("Spróbuj innym razem");
+            roznica = roznica/10;
+            //dzielenie całkowite jeżeli dzielimy liczby całkowite to wybik też jest całkowity;
+            switch (roznica)
+            {
+                case 0:
+                    System.out.println("było bardzo blisko");
+                    break;
+                case 1:
+                    System.out.println("nieźle");
+                    break;
+                case 2:
+                    System.out.println("trochę brakowało");
+                    break;
+                default:
+                    System.out.println("może innym razem będzie lepiej");
+            }
         }
     }
 
