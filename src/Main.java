@@ -10,6 +10,5 @@ public class Main {
 
         Gra graPierwsza = new Gra();
         graPierwsza.zagraj();
-        //TODO: losowanie tylko raz i wpisywanie od nowa
     }
 }
