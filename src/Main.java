@@ -2,38 +2,22 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
-        System.out.println("Zostanie wylosowana jedna liczba z zakresu od 1 do 100");
-        int liczbaWylosowana = (int)(Math.random()*100+1);
-        System.out.println(liczbaWylosowana);
-        Scanner klawiatura = new Scanner(System.in);
-        System.out.println("podaj liczbę z zakresu 1 do 100");
-        int wpisana = klawiatura.nextInt();
-        System.out.println("wstawiono: " + wpisana);
-        while(wpisana != liczbaWylosowana)
+        System.out.println("Zostanie wylosowanych 6 liczb z zakresu od 1 do 100");
+        int wylosowane[] = new int[6];
+        /*
+        Tablica w Javie przaechowuje typy proste i złożone
+        musi mieć ustalony rozmiar
+        rozmiaru nie można zmienić w dalszej części programu
+         */
+        for(int i = 0; i< 6; i++)
         {
-            int roznica = liczbaWylosowana > wpisana ? liczbaWylosowana - wpisana : wpisana - liczbaWylosowana;
-            roznica = roznica / 10;
-            if(wpisana > liczbaWylosowana)
-            {
-                System.out.println("Za dużo!");
-            }
-            else
-            {
-                System.out.println("Za mało!");
-            }
-            System.out.println(
-                    switch (roznica) {
-                        case 0 -> "było bardzo blisko";
-                        case 1 -> "Całkiem nieźle";
-                        case 2 -> "prawie";
-                        default -> "spróbuj ponownie";
-                    });
-
-            wpisana = klawiatura.nextInt();
-            System.out.println("wstawiono: " + wpisana);
+            wylosowane[i]=(int)(Math.random()*10+1);
         }
-        System.out.println("Brawo Zgadłeś!");
+        System.out.println(wylosowane);//adres obiektu
+        for(int wylosowana:wylosowane)
+        {
+            System.out.println(wylosowana+", ");
+        }
     }
 }
 
