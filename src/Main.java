@@ -1,20 +1,21 @@
-import java.util.Scanner;
+import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Zostanie wylosowanych 6 liczb z zakresu od 1 do 100");
-        int wylosowane[] = new int[6];
+        HashSet<Integer> wylosowane = new HashSet<>();
         /*
-        Tablica w Javie przaechowuje typy proste i złożone
-        musi mieć ustalony rozmiar
-        rozmiaru nie można zmienić w dalszej części programu
+        kolekcje:
+        listy - ArrayList, LinkedList - elementy uporządkowane indeksowane mogą się powtarzać
+        zbiory - HashSet - elementy zazwyczaj nieporządkowane nieindeksowane nie mogą się potarzać
+        mapy
          */
-        for(int i = 0; i< 6; i++)
+        while(wylosowane.size()<6)
         {
-            wylosowane[i]=(int)(Math.random()*10+1);
+            wylosowane.add((int)(Math.random()*10+1));
         }
         System.out.println(wylosowane);//adres obiektu
-        for(int wylosowana:wylosowane)
+        for(int wylosowana:wylosowane)//taki foreach
         {
             System.out.println(wylosowana+", ");
         }
