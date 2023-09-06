@@ -41,21 +41,16 @@ public class Main {
             */
             roznica = roznica/10;
             //dzielenie całkowite jeżeli dzielimy liczby całkowite to wybik też jest całkowity;
-            switch (roznica)
-            {
-                case 0:
-                    System.out.println("było bardzo blisko");
-                    break;
-                case 1:
-                    System.out.println("nieźle");
-                    break;
-                case 2:
-                    System.out.println("trochę brakowało");
-                    break;
-                default:
-                    System.out.println("może innym razem będzie lepiej");
-            }
+            System.out.println(
+                    switch (roznica)
+                            {
+                                case 0 -> "było bardzo blisko";
+                                case 1 -> "Całkiem nieźle";
+                                case 2 -> "prawie";
+                                default -> "spróbuj ponownie";
+                            });
         }
-    }
 
+    }
 }
+
